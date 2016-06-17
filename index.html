@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Up and Running with Angular</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./app/controllers/first.controller.js"></script>
 </head>
 <body>
+    <div class="main" ng-controller="FirstCtrl as fc">
+        <ul class="artistlist">
+            <li class="artist cf" ng-repeat="author in fc.authors">
+                <img ng-src="assets/images/{{author.shortname}}_tn.jpg" alt="Photo of {{author.name}}">
+                <div>
+                    <h2>{{author.name}}</h2>
+                    <h3>{{author.reknown}}</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
