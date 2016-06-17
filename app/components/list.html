@@ -18,8 +18,8 @@
             descending
         </label>
     </div>
-    <ul class="artistlist">
-        <li class="artist cf" ng-repeat="author in lc.authors | filter: lc.query | orderBy: lc.artistOrder:lc.direction">
+    <ul class="artistlist" ng-show="lc.query">
+        <li ng-animate="'animate'" class="artist cf" ng-repeat="author in lc.authors | filter: lc.query | orderBy: lc.artistOrder:lc.direction">
             <a href="#/details/{{lc.authors.indexOf(author)}}">
                 <img ng-src="assets/images/{{author.shortname}}_tn.jpg" alt="Photo of {{author.name}}">
                 <div>
