@@ -6,6 +6,7 @@
 
         $http.get('./app/data.json').success(function(data) {
             vm.authors = data;
+            vm.artistOrder = 'name';
         });
     }
 
