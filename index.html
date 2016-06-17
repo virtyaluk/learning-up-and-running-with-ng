@@ -5,39 +5,13 @@
     <title>Up and Running with Angular</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
     <script src="./app/app.module.js"></script>
-    <script src="./app/controllers/first.controller.js"></script>
+    <script src="./app/app.routes.js"></script>
+    <script src="./app/components/list.controller.js"></script>
+    <script src="./app/components/details.controller.js"></script>
 </head>
 <body>
-    <div class="main" ng-controller="FirstCtrl as fc">
-        <div class="search">
-            <h1>Artist directory</h1>
-            <label>search: </label>
-            <input ng-model="fc.query" type="text" placeholder="Search for authors" autofocus>
-            <label class="formgroup">by
-                <select ng-model="fc.artistOrder">
-                    <option value="name">Name</option>
-                    <option value="reknown">Reknown</option>
-                </select>
-            </label>
-            <label class="formgroup">
-                <input ng-model="fc.direction" type="radio" name="direction" checked>
-                ascending
-            </label>
-            <label class="formgroup">
-                <input ng-model="fc.direction" type="radio" name="direction" value="reverse">
-                descending
-            </label>
-        </div>
-        <ul class="artistlist">
-            <li class="artist cf" ng-repeat="author in fc.authors | filter: fc.query | orderBy: fc.artistOrder:fc.direction">
-                <img ng-src="assets/images/{{author.shortname}}_tn.jpg" alt="Photo of {{author.name}}">
-                <div>
-                    <h2>{{author.name}}</h2>
-                    <h3>{{author.reknown}}</h3>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <div class="main" ng-view></div>
 </body>
 </html>

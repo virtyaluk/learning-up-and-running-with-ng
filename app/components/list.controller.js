@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    function FirstCtrl($http) {
+    function ListController($http) {
         var vm = this;
 
         $http.get('./app/data.json').success(function(data) {
@@ -10,9 +10,9 @@
         });
     }
 
-    FirstCtrl.$inject = ['$http'];
+    ListController.$inject = ['$http'];
 
     angular
         .module('app')
-        .controller('FirstCtrl', FirstCtrl);
+        .controller('ListController', ListController);
 }());
